@@ -1,0 +1,6 @@
+{
+	"recipes": {
+		"summonerorb_reset": "net.daveyx0.summoner.crafting.SummonerOrbResetRecipe$Factory",
+		"enhancedorb_reset": "net.daveyx0.summoner.crafting.SummonerOrbResetRecipe$Factory"
+	}
+}

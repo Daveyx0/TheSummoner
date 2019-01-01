@@ -1,0 +1,110 @@
+{
+  "pools": [
+    {
+	  "name":  "summoner_boss_drops",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "thesummoner:enhanced_summoner_orb"
+        }
+      ]
+    },
+    {
+		"name":  "summoner_boss_additional_drops1",
+        "rolls": 1,
+        "entries": [
+            {
+                "type": "item",
+                "name": "minecraft:emerald",
+                "weight": 1,
+                "functions": [
+                    {
+                        "function": "set_count",
+                        "count": {
+                            "min": 4,
+                            "max": 10
+                        }
+                    },
+                    {
+                        "function": "looting_enchant",
+                        "count": {
+                            "min": 0,
+                            "max": 3
+                        }
+                    }
+                ]
+            }
+        ],
+        "conditions": [
+            {
+                "condition": "killed_by_player"
+            }
+        ]
+    },
+    {
+        "name":  "summoner_boss_additional_drops2",
+        "rolls": 1,
+        "entries": [
+            {
+                "type": "item",
+                "name": "thesummoner:summoner_orb",
+                "weight": 1,
+                "functions": [
+                    {
+                        "function": "set_count",
+                        "count": {
+                            "min": 1,
+                            "max": 3
+                        }
+                    },
+                    {
+                        "function": "looting_enchant",
+                        "count": {
+                            "min": 0,
+                            "max": 1
+                        }
+                    }
+                ]
+            }
+        ],
+        "conditions": [
+            {
+                "condition": "killed_by_player"
+            }
+        ]
+    },
+    {
+        "name":  "summoner_rare_drops",
+        "rolls": 1,
+        "entries": [
+            {
+                "type": "item",
+                "name": "minecraft:totem_of_undying",
+                "weight": 1,
+                "functions": [
+                    {
+                        "function": "set_count",
+                        "count": {
+                            "min": 0,
+                            "max": 1
+                        }
+                    },
+                    {
+                        "function": "looting_enchant",
+                        "count": {
+                            "min": 0,
+                            "max": 1
+                        }
+                    }
+                ]
+            }
+        ],
+        "conditions": [
+            {
+                "condition": "killed_by_player"
+            }
+        ]
+    }
+  ]
+}

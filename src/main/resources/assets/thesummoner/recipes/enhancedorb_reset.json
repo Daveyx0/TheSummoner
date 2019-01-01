@@ -1,0 +1,13 @@
+{
+  "type": "thesummoner:enhancedorb_reset",
+  "ingredients": [
+    {
+      "item": "thesummoner:enhanced_summoner_orb",
+      "data": 32767
+    }
+  ],
+  "result": {
+    "item": "thesummoner:enhanced_summoner_orb",
+    "data": 0
+  }
+}
