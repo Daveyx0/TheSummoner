@@ -7,6 +7,6 @@ public class TheSummonerSpawnRegistry extends MMSpawnRegistry{
 
 		public static void registerSpawns() {
 			
-			registerSpawnEntry(new MMConfigSpawnEntry("_Summoner", "thesummoner:summoner", 4, true).setupBaseMobSpawnEntry(true).setAdditionalRarity(20));
+			registerSpawnEntry(new MMConfigSpawnEntry("_Summoner", "thesummoner:summoner", 4, true).setupBaseMobSpawnEntry(true).setAdditionalRarity(2));
 		}
 }

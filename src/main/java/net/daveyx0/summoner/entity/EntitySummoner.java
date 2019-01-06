@@ -5,6 +5,7 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import net.daveyx0.multimob.core.MultiMob;
+import net.daveyx0.multimob.entity.IMultiMob;
 import net.daveyx0.multimob.entity.ai.EntityAIBackOffFromEntity;
 import net.daveyx0.multimob.message.MMMessageRegistry;
 import net.daveyx0.multimob.message.MessageMMParticle;
@@ -21,6 +22,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -63,7 +65,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.fml.common.network.NetworkRegistry.TargetPoint;
 
-public class EntitySummoner extends EntitySummoningIllager {
+public class EntitySummoner extends EntitySummoningIllager implements IMultiMob {
 	
 	private final BossInfoServer bossInfo = (BossInfoServer)(new BossInfoServer(this.getDisplayName(), BossInfo.Color.PURPLE, BossInfo.Overlay.PROGRESS)).setDarkenSky(true);
 	private static final DataParameter<Boolean> IS_BOSS = EntityDataManager.<Boolean>createKey(EntitySummoner.class, DataSerializers.BOOLEAN);
@@ -238,12 +240,6 @@ public class EntitySummoner extends EntitySummoningIllager {
    {
        super.updateAITasks();
        this.bossInfo.setPercent(this.getHealth() / this.getMaxHealth());
-   }
-   
-   @Override
-   public boolean isCreatureType(EnumCreatureType type, boolean forSpawnCount)
-   {
-       return false;
    }
 
    /**
@@ -423,9 +419,10 @@ public class EntitySummoner extends EntitySummoningIllager {
         }
     }
     
-	public void setBoss(boolean b) {
+	public EntityLivingBase setBoss(boolean b) {
 
-		 this.dataManager.set(IS_BOSS, b);
+		this.dataManager.set(IS_BOSS, b);
+		return this;
 	}
 	
 	public boolean isBoss()

@@ -20,11 +20,12 @@ public class TheSummonerClientProxy extends TheSummonerCommonProxy {
 	    public void preInit(FMLPreInitializationEvent event) {
 	        OBJLoader.INSTANCE.addDomain(TheSummonerReference.MODID);
 	        TheSummonerEntityRegistry.registerRenderers();
+	        super.preInit(event);
 	    }
 
 	    @Override
 	    public void init(FMLInitializationEvent event) {
-
+	    	super.init(event);
 	    }
 
 	    @Override
@@ -34,6 +35,7 @@ public class TheSummonerClientProxy extends TheSummonerCommonProxy {
 	    	{
 		    	RenderManagerSummon.addRenderLayers();
 	    	}
+	    	super.postInit(event);
 
 	    }
 	    
