@@ -1,0 +1,8 @@
+#Entities
+
+entity.thesummoner.summoner.name=Призыватель
+
+#Items
+
+item.thesummoner:summoner_orb.name=Сфера призывателя
+item.thesummoner:enhanced_summoner_orb.name=Зачарованная сфера призывателя
